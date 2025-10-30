@@ -211,5 +211,4 @@ Mensagens possíveis:
 ## 📜 Créditos
 
 Projeto realizado na **42 School** como parte do currículo de *Common Core*.  
-Implementado por **[seu_login_da_42]**.  
 Inspirado no problema original de Dijkstra (1965).
