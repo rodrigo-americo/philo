@@ -6,7 +6,7 @@
 /*   By: rgregori <rgregori@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/17 11:06:56 by rgregori          #+#    #+#             */
-/*   Updated: 2025/10/30 14:04:53 by rgregori         ###   ########.fr       */
+/*   Updated: 2025/10/30 15:24:04 by rgregori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,44 +16,7 @@ void	ft_philo_think(t_philo_state *state)
 {
 	ft_check_death(state);
 	ft_print_status(state, "is thinking");
-
-    /* * Remova este bloco 'if' inteiro.
-     * O tempo de "pensar" será, na verdade, o tempo
-     * que o filósofo passa esperando no 'sem_wait'
-     * pelo assento e pelos garfos.
-     */
-	// if (state->data.number_of_philosophers % 2 != 0)
-	// {
-	// 	... (REMOVER TUDO AQUI) ...
-	// }
-
-    /* * (Opcional) Você pode adicionar um usleep bem curto
-     * se quiser ajudar a dessincronizar os filósofos.
-     * Mas com os semáforos, isso pode nem ser necessário.
-     */
-    // usleep(200); 
 }
-
-// void	ft_philo_think(t_philo_state *state)
-// {
-// 	long long	sleep_start;
-// 	long long	elapsed;
-
-// 	ft_check_death(state);
-// 	ft_print_status(state, "is thinking");
-// 	sleep_start = ft_get_time_ms();
-// 	if (state->data.number_of_philosophers % 2 != 0)
-// 	{
-// 		while (1)
-// 		{
-// 			elapsed = ft_get_time_ms() - sleep_start;
-// 			if (elapsed >= state->data.time_to_sleep)
-// 				break ;
-// 			ft_check_death(state);
-// 			usleep(200);
-// 		}
-// 	}
-// }
 
 void	ft_philo_sleep(t_philo_state *state)
 {

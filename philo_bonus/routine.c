@@ -6,7 +6,7 @@
 /*   By: rgregori <rgregori@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/07 12:07:34 by rgregori          #+#    #+#             */
-/*   Updated: 2025/10/30 15:10:34 by rgregori         ###   ########.fr       */
+/*   Updated: 2025/10/30 15:25:22 by rgregori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,10 +30,10 @@ static void	ft_release_forks(t_philo_state *state)
 	sem_post(state->seats);
 }
 
-void *philo_monitor(void *arg)
+void	*philo_monitor(void *arg)
 {
-	t_philo_state *state;
-	
+	t_philo_state	*state;
+
 	state = (t_philo_state *)arg;
 	while (1)
 	{

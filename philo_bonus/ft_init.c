@@ -6,11 +6,23 @@
 /*   By: rgregori <rgregori@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/06 11:53:50 by rgregori          #+#    #+#             */
-/*   Updated: 2025/10/17 14:48:01 by rgregori         ###   ########.fr       */
+/*   Updated: 2025/10/30 15:25:03 by rgregori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo_bonus.h"
+
+static int	validate_table(t_table *table)
+{
+	if (table->max_eats <= 0 || table->number_of_philosophers < 1)
+		return (1);
+	if (table->time_to_die < 1 || table->time_to_eat < 1
+		|| table->time_to_sleep < 1)
+	{
+		return (1);
+	}
+	return (0);
+}
 
 t_table	*ft_init_table(int argc, char **argv)
 {
@@ -26,8 +38,7 @@ t_table	*ft_init_table(int argc, char **argv)
 	table->max_eats = 0;
 	if (argc == 6)
 		table->max_eats = atol(argv[5]);
-	if (table->number_of_philosophers < 1 || table->time_to_die < 1
-		|| table->time_to_eat < 1 || table->time_to_sleep < 1)
+	if (validate_table(table))
 	{
 		free(table);
 		return (NULL);
